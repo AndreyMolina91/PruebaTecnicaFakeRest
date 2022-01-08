@@ -1,0 +1,17 @@
+<mat-card>
+    <span>Post new books Author</span>
+    <form [formGroup]="authorsForm" (ngSubmit) ="onSubmit()">
+        <mat-form-field class="w-100 post-authors-field">
+            <input matInput placeholder="id of Book" formControlName="idBook">
+        </mat-form-field>
+        <mat-form-field class="w-100 post-authors-field">
+            <input matInput placeholder="First Name" formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field class="w-100 post-authors-field">
+            <input matInput placeholder="Last Name" formControlName="lastName">
+        </mat-form-field>
+        
+            <button mat-raised-button [disabled]="!authorsForm.valid" class="bg-success text-light w-100"> Post new Author </button>
+
+    </form>  
+</mat-card>

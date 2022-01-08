@@ -1,0 +1,32 @@
+<div class="body">
+    <div class="circle move" data-value="-10"></div>
+    <div class="circle move" data-value="-10"></div>
+    <div class="circle move" data-value="-10"></div>
+    <div class="circle move" data-value="-10"></div>
+
+    <div class="stars">
+        <img src="assets/imgs/constelacion.png" alt="Stars_img">
+    </div>
+
+    <div class="contenedor">
+        <p class="mb-4">Welcome to Login</p>
+        <h1 class="mt-4 me-4">FakeRestAPI</h1>
+        <img class="mt-4" src="assets/imgs/astronauta.png" alt="Astronaut_img">
+        <div class="mt-4 pt-4">
+            <button (click)="getLoginForm()" class="mt-4" mat-flat-button>Get Access Token</button>
+        </div>
+        
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    window.onmousemove = (event) => {
+    document.querySelectorAll('.move').forEach(element => {
+        const data = element.getAttribute('data-value')
+        const x = (window.innerWidth - event.pageX * data) / 100
+        const y = (window.innerHeight - event.pageY * data) / 100
+        element.style.transform = `translateX(${x}px) translateY(${y}px)`
+    })
+}
+</script>

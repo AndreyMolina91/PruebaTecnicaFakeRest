@@ -1,0 +1,18 @@
+<mat-card>
+    <span>Post new activity</span>
+    <hr>
+    <form [formGroup]="activityForm" (ngSubmit) ="onSubmit()">
+        <mat-form-field class="w-100 post-activities-field">
+            <input matInput placeholder="Activity Title" formControlName="title">
+        </mat-form-field>
+        <mat-form-field class="w-100 post-activities-field">
+            <input matInput placeholder="Date" formControlName="dueDate">
+        </mat-form-field>
+        <mat-form-field class="w-100 post-activities-field">
+            <input matInput placeholder="Completed" formControlName="completed">
+        </mat-form-field>
+        
+            <button mat-raised-button [disabled]="!activityForm.valid" class="bg-success text-light w-100"> Post new Author </button>
+
+    </form>  
+</mat-card>

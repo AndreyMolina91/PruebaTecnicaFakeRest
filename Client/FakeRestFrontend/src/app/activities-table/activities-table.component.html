@@ -1,0 +1,49 @@
+
+<div class="row">
+
+    <div class="col-8 table-container">
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"> 
+
+            <ng-container matColumnDef="id">
+                <th class="bg-success text-light" mat-header-cell *matHeaderCellDef>Id.</th>
+                <td mat-cell *matCellDef="let element">{{element.id}}</td>
+            </ng-container>
+        
+            <ng-container matColumnDef="title">
+                <th class="bg-success text-light" mat-header-cell *matHeaderCellDef>Title.</th>
+                <td mat-cell *matCellDef="let element">{{element.title}}</td>
+            </ng-container>
+        
+            <ng-container matColumnDef="dueDate">
+                <th class="bg-success text-light" mat-header-cell *matHeaderCellDef>dueDate.</th>
+                <td mat-cell *matCellDef="let element">{{element.dueDate}}</td>
+            </ng-container>
+        
+            <ng-container matColumnDef="completed">
+                <th class="bg-success text-light" mat-header-cell *matHeaderCellDef>Completed.</th>
+                <td mat-cell *matCellDef="let element">{{element.completed}}</td>
+            </ng-container>
+        
+            <ng-container matColumnDef="actions">
+                <th class="bg-success text-light" mat-header-cell *matHeaderCellDef>Actions.</th>
+                <td mat-cell *matCellDef="let element"><button (click)="addToForm(element)" mat-raised-button class="btn btn-success">Add to Form</button></td>
+            </ng-container>
+        
+            <tr mat-header-row  *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 30]" class="mat-paginator-sticky">
+        </mat-paginator>
+        
+    </div>
+
+    <div class="col-4">
+        <button class="btn btn-primary">Guardar actividad?</button>
+    </div>
+    
+</div>
+    
+
+

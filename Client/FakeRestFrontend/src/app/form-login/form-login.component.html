@@ -1,0 +1,13 @@
+<mat-card>
+    <h1>Try to login</h1>
+    <form [formGroup]="usersForm" (ngSubmit) ="onSubmit()">
+        <mat-form-field class="w-100 form-login-field">
+            <input matInput placeholder="User Name" formControlName="userName">
+        </mat-form-field>
+        <mat-form-field class="w-100 form-login-field">
+            <input type="password" matInput placeholder="Your User Password" formControlName="password">
+        </mat-form-field>
+            <div class="text-center"><button mat-raised-button color="primary">Login</button></div>
+            
+    </form>  
+</mat-card>
